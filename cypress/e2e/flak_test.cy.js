@@ -9,9 +9,9 @@ describe('Flak Teste', () => {
  
     it('Adicionar curso', () => {
 
-    cy.get('input[name="name"]').click().type('Some Name')
+    cy.get('input[name="name"]').click().type('Alex')
     
-    cy.get('input[name="email"]').click().type('some@email.com')
+    cy.get('input[name="email"]').click().type('alex@gmail.com')
     
     cy.get('select[name="department"]').select('core')
     
@@ -19,7 +19,7 @@ describe('Flak Teste', () => {
     
     cy.get('input[type="submit"]').click()
     
-    cy.get('input[value="Saved!"]').should('be.visible')
+    cy.get('input[value="Saved!"]',{timeout:7000}).should('be.visible')
   
     cy.get('li').should('contain', ' core - git-it')
   })
